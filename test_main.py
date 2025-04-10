@@ -38,4 +38,6 @@ class InventoryApiTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 200)
 
 if __name__ == '__main__':
-    unittest.main()
+   with open("test_results.txt", "w") as f:
+        runner = unittest.TextTestRunner(stream=f, verbosity=2)
+        unittest.main(testRunner=runner)
